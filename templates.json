@@ -1,0 +1,54 @@
+{
+  "templates": [
+    {
+      "id": 1,
+      "header": "💄 *Bizda yangilik!* 💄\n\n",
+      "footer": "\n\n✨ [Zakaz qiling]({order_link})! ✨\n\n📲 [Telegram]({telegram_link}) | 📷 [Instagram]({instagram_link})"
+    },
+    {
+      "id": 2,
+      "header": "🌟 *Indicare yangiliklari!* 🌟\n\n",
+      "footer": "\n\n✨ [Buyurtma qiling]({order_link})! ✨\n\n📲 [Telegram]({telegram_link}) | 📷 [Instagram]({instagram_link})"
+    },
+    {
+      "id": 3,
+      "header": "✨ *Yangi mahsulotlar!* ✨\n\n",
+      "footer": "\n\n🌟 [Hoziroq zakaz qiling]({order_link})! 🌟\n\n📲 [Telegram]({telegram_link}) | 📷 [Instagram]({instagram_link})"
+    },
+    {
+      "id": 4,
+      "header": "💅 *Indicare yangiliklari!* 💅\n\n",
+      "footer": "\n\n✨ [Zakaz qiling]({order_link})! ✨\n\n📲 [Telegram]({telegram_link}) | 📷 [Instagram]({instagram_link})"
+    },
+    {
+      "id": 5,
+      "header": "🌸 *Yangi kelib tushgan mahsulotlar!* 🌸\n\n",
+      "footer": "\n\n✨ [Buyurtma qiling]({order_link})! ✨\n\n📲 [Telegram]({telegram_link}) | 📷 [Instagram]({instagram_link})"
+    },
+    {
+      "id": 6,
+      "header": "💄 *Indicare yangiliklari!* 💄\n\n",
+      "footer": "\n\n✨ [Hoziroq zakaz qiling]({order_link})! ✨\n\n📲 [Telegram]({telegram_link}) | 📷 [Instagram]({instagram_link})"
+    },
+    {
+      "id": 7,
+      "header": "🌟 *Yangi mahsulotlar!* 🌟\n\n",
+      "footer": "\n\n✨ [Buyurtma qiling]({order_link})! ✨\n\n📲 [Telegram]({telegram_link}) | 📷 [Instagram]({instagram_link})"
+    },
+    {
+      "id": 8,
+      "header": "💅 *Indicare yangiliklari!* 💅\n\n",
+      "footer": "\n\n✨ [Zakaz qiling]({order_link})! ✨\n\n📲 [Telegram]({telegram_link}) | 📷 [Instagram]({instagram_link})"
+    },
+    {
+      "id": 9,
+      "header": "🌸 *Yangi kelib tushgan mahsulotlar!* 🌸\n\n",
+      "footer": "\n\n✨ [Buyurtma qiling]({order_link})! ✨\n\n📲 [Telegram]({telegram_link}) | 📷 [Instagram]({instagram_link})"
+    },
+    {
+      "id": 10,
+      "header": "💄 *Indicare yangiliklari!* 💄\n\n",
+      "footer": "\n\n✨ [Hoziroq zakaz qiling]({order_link})! ✨\n\n📲 [Telegram]({telegram_link}) | 📷 [Instagram]({instagram_link})"
+    }
+  ]
+}
