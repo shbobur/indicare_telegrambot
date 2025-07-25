@@ -2,6 +2,7 @@
 const ORDER_LINK = "https://t.me/indicare_uz";
 const TELEGRAM_LINK = "t.me/indicareuz";
 const INSTAGRAM_LINK = "https://www.instagram.com/indicare.uz/";
+const UZUM_LINK = "https://uzum.uz/uz/shop/indicareuz";
 
 // Allowed user IDs
 const allowed_user_ids = new Set([
@@ -11,15 +12,38 @@ const allowed_user_ids = new Set([
     'indicare_uz'                      // Indicare account
 ]);
 
-// Footer template
-const FOOTER = "\n\n✨ [Buyurtma qiling]({order_link})! ✨\n\n📲 [Telegram]({telegram_link}) | 📷 [Instagram]({instagram_link})";
+// Footer designs - you can assign any of these to FOOTER
+const FOOTER_DESIGNS = {
+    // Current design
+    default: "\n\n✨ [Buyurtma qiling]({order_link})! ✨\n\n🛍️ [Uzum]({uzum_link}) | 📲 [Telegram]({telegram_link}) | 📷 [Instagram]({instagram_link})",
+    
+    // Minimalist design
+    minimal: "\n\n[Buyurtma]({order_link}) • [Uzum]({uzum_link}) • [TG]({telegram_link}) • [IG]({instagram_link})",
+    
+    // Vertical design with emojis
+    vertical: "\n\n✨ [Buyurtma qiling]({order_link})! ✨\n\n🛍️ [Uzum]({uzum_link})\n📲 [Telegram]({telegram_link})\n📷 [Instagram]({instagram_link})",
+    
+    // Decorative design
+    decorative: "\n\n⭐️━━━━━━━━━━━━━━━━━━━━━⭐️\n[💫 Buyurtma qiling]({order_link})\n\n[🎁 Uzum]({uzum_link})\n[📱 Telegram]({telegram_link})\n[📸 Instagram]({instagram_link})\n⭐️━━━━━━━━━━━━━━━━━━━━━⭐️",
+    
+    // Modern compact design
+    modern: "\n\n🌟 [Order Now]({order_link})\n━━━━━━━━━\n[Uzum]({uzum_link}) ⋄ [TG]({telegram_link}) ⋄ [IG]({instagram_link})",
+    
+    // Branded design
+    branded: "\n\n✦ INDICARE ✦\n[Buyurtma qiling]({order_link})\n\n[Uzum]({uzum_link}) • [Telegram]({telegram_link}) • [Instagram]({instagram_link})\n✦ ━━━━━━ ✦"
+};
+
+// Footer template - To test different designs, assign any design from FOOTER_DESIGNS
+// Example: const FOOTER = FOOTER_DESIGNS.vertical;
+const FOOTER = FOOTER_DESIGNS.branded;
 
 // Format the footer with the constants
 function formatFooter() {
     return FOOTER
         .replace("{order_link}", ORDER_LINK)
         .replace("{telegram_link}", TELEGRAM_LINK)
-        .replace("{instagram_link}", INSTAGRAM_LINK);
+        .replace("{instagram_link}", INSTAGRAM_LINK)
+        .replace("{uzum_link}", UZUM_LINK);
 }
 
 // Handle incoming requests

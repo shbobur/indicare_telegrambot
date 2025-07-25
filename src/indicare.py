@@ -15,6 +15,28 @@ bot = telebot.TeleBot(BOT_TOKEN)
 ORDER_LINK = "https://t.me/indicare_uz"
 TELEGRAM_LINK = "t.me/indicareuz"
 INSTAGRAM_LINK = "https://www.instagram.com/indicare.uz/"
+UZUM_LINK = "https://uzum.uz/uz/shop/indicareuz"
+
+# Footer designs
+FOOTER_DESIGNS = {
+    # Current design
+    'default': "\n\n✨ [Buyurtma qiling]({order_link})! ✨\n\n🛍️ [Uzum]({uzum_link}) | 📲 [Telegram]({telegram_link}) | 📷 [Instagram]({instagram_link})",
+    
+    # Minimalist design
+    'minimal': "\n\n[Buyurtma]({order_link}) • [Uzum]({uzum_link}) • [TG]({telegram_link}) • [IG]({instagram_link})",
+    
+    # Vertical design with emojis
+    'vertical': "\n\n✨ [Buyurtma qiling]({order_link})! ✨\n\n🛍️ [Uzum]({uzum_link})\n📲 [Telegram]({telegram_link})\n📷 [Instagram]({instagram_link})",
+    
+    # Decorative design
+    'decorative': "\n\n⭐️━━━━━━━━━━━━━━━━━━━━━⭐️\n[💫 Buyurtma qiling]({order_link})\n\n[🎁 Uzum]({uzum_link})\n[📱 Telegram]({telegram_link})\n[📸 Instagram]({instagram_link})\n⭐️━━━━━━━━━━━━━━━━━━━━━⭐️",
+    
+    # Modern compact design
+    'modern': "\n\n🌟 [Order Now]({order_link})\n━━━━━━━━━\n[Uzum]({uzum_link}) ⋄ [TG]({telegram_link}) ⋄ [IG]({instagram_link})",
+    
+    # Branded design
+    'branded': "\n\n✦ INDICARE ✦\n[Buyurtma qiling]({order_link})\n\n[Uzum]({uzum_link}) • [Telegram]({telegram_link}) • [Instagram]({instagram_link})\n✦ ━━━━━━ ✦"
+}
 
 # Load post templates
 with open("templates.json", "r", encoding="utf-8") as file:
@@ -43,12 +65,12 @@ def make_post_from_template(template_id, message):
         
     template = templates[template_index]
     header = template["header"]
-    FOOTER = "\n\n✨ [Buyurtma qiling]({order_link})! ✨\n\n📲 [Telegram]({telegram_link}) | 📷 [Instagram]({instagram_link})"
-    # footer = template["footer"].format(
-    footer = FOOTER.format(
+    # Use the branded footer design
+    footer = FOOTER_DESIGNS['branded'].format(
         order_link=ORDER_LINK,
         telegram_link=TELEGRAM_LINK,
-        instagram_link=INSTAGRAM_LINK
+        instagram_link=INSTAGRAM_LINK,
+        uzum_link=UZUM_LINK
     )
     return f"{header}{message}{footer}"
 
@@ -65,6 +87,10 @@ def send_welcome(message):
 @bot.message_handler(func=lambda msg: True)
 def echo_all(message):
     logger.info(f"Received message: {message.text} from {message.from_user}")
+
+    logger.info('--------------------------------')
+    logger.info(f"Message: {message}")
+    logger.info('--------------------------------')
 
     if is_allowed(message.from_user.username) or is_allowed(message.from_user.first_name):
         print('Sending back to ', message.from_user)
